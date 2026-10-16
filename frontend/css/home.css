@@ -1,0 +1,92 @@
+/* home page */
+.bh { position: fixed; inset: 0; width: 100%; height: 100%; display: block; z-index: -2; background: #000; }
+.bh.no-webgl { background: radial-gradient(circle at 70% 48%, #000 0 9%, rgba(255, 196, 107, 0.9) 9.6%, rgba(255, 122, 46, 0.35) 13%, transparent 30%), #030304; }
+.scrim {
+  position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background: linear-gradient(90deg, rgba(3, 3, 4, 0.92) 0%, rgba(3, 3, 4, 0.72) 34%, rgba(3, 3, 4, 0) 62%),
+              linear-gradient(0deg, rgba(3, 3, 4, 0.7) 0%, transparent 30%);
+}
+
+.home-top { position: absolute; top: 0; left: 0; right: 0; z-index: 5; display: flex; align-items: center; justify-content: space-between; padding: 26px 48px; }
+.home-links { display: flex; gap: 8px; }
+.home-links a { padding: 8px 16px; border-radius: 999px; text-decoration: none; color: var(--text-2); font-weight: 500; transition: background 0.2s, color 0.2s; }
+.home-links a:hover { color: var(--text); background: rgba(255, 240, 220, 0.07); }
+
+.hero { min-height: 100vh; display: flex; align-items: center; padding: 120px 48px 72px; }
+.hero-text, .journey { width: min(640px, 100%); }
+.kicker { color: var(--gold); font-weight: 600; margin-bottom: 22px; }
+.hero .display { margin-bottom: 26px; }
+.hero .lead { margin-bottom: 38px; }
+
+.ask { display: flex; align-items: center; gap: 6px; padding: 7px 7px 7px 22px; border-radius: 999px; border-color: var(--line-2); transition: border-color 0.2s, box-shadow 0.2s; }
+.ask:focus-within { border-color: rgba(255, 196, 107, 0.6); box-shadow: 0 0 0 4px rgba(255, 196, 107, 0.12), 0 20px 60px -20px rgba(255, 122, 46, 0.5); }
+.ask-prefix { color: var(--text-3); font-family: var(--mono); font-size: 0.95rem; }
+.ask input { flex: 1; min-width: 0; height: 52px; background: transparent; border: 0; outline: 0; font-family: var(--mono); font-size: 0.98rem; color: var(--text); }
+.ask input::placeholder { color: var(--text-3); }
+.err { min-height: 1.6em; margin: 12px 0 6px 22px; color: var(--bad); font-size: 0.95rem; }
+
+.prefs { display: grid; gap: 14px; margin-bottom: 26px; }
+.pref { display: grid; grid-template-columns: 70px 1fr; align-items: center; gap: 12px; }
+.pref-label { color: var(--text-3); font-size: 0.95rem; }
+
+.try { color: var(--text-3); font-size: 0.95rem; margin-bottom: 18px; }
+.try button { background: none; border: 0; cursor: pointer; font-family: var(--mono); font-size: 0.9rem; color: var(--text-2); border-bottom: 1px dashed rgba(255, 196, 107, 0.45); padding: 0 2px; margin: 0 2px; }
+.try button:hover { color: var(--gold); }
+.status { display: inline-flex; align-items: center; gap: 10px; font-size: 0.9rem; color: var(--text-3); }
+.status .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--text-3); }
+.status.ok { color: var(--text-2); } .status.ok .dot { background: var(--ok); box-shadow: 0 0 12px var(--ok); }
+.status.warn .dot { background: var(--gold); box-shadow: 0 0 12px var(--gold); }
+.status.down .dot { background: var(--bad); }
+.status a { color: var(--gold); }
+
+/* the journey (loading) */
+.journey { padding: 36px 38px; animation: rise 0.5s ease; }
+@keyframes rise { from { opacity: 0; transform: translateY(16px); } }
+.journey-repo { font-family: var(--mono); color: var(--gold); font-size: 0.95rem; margin-bottom: 14px; }
+.journey-now { font-family: var(--serif); font-weight: 400; font-size: clamp(2rem, 3.4vw, 2.8rem); line-height: 1.1; margin-bottom: 24px; min-height: 2.2em; }
+.journey-bar { height: 3px; border-radius: 3px; background: rgba(255, 240, 220, 0.1); overflow: hidden; margin-bottom: 24px; }
+.journey-bar span { display: block; height: 100%; width: 0; background: var(--flare); box-shadow: 0 0 16px rgba(255, 150, 60, 0.8); transition: width 0.6s ease; }
+.journey-list { list-style: none; display: grid; gap: 8px; }
+.journey-list li { display: flex; align-items: center; gap: 12px; color: var(--text-3); font-size: 0.97rem; }
+.journey-list li .mark { width: 22px; height: 22px; border-radius: 50%; border: 1px solid var(--line-2); display: grid; place-items: center; flex: none; }
+.journey-list li .mark .ico { width: 13px; height: 13px; }
+.journey-list li.done { color: var(--text-2); }
+.journey-list li.done .mark { background: rgba(143, 227, 170, 0.15); border-color: transparent; color: var(--ok); }
+.journey-list li.now { color: var(--text); }
+.journey-list li.now .mark { border-color: var(--gold); box-shadow: 0 0 12px rgba(255, 196, 107, 0.6); animation: breathe 1.4s ease-in-out infinite; }
+.journey-list li.skip { text-decoration: line-through; }
+.journey-time { margin-top: 20px; color: var(--text-3); font-size: 0.9rem; }
+.journey-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
+.journey-actions:empty { display: none; }
+.journey.failed .journey-now { color: var(--bad); }
+
+/* how it works */
+.how { padding: 120px max(48px, calc((100% - 1200px) / 2)) 100px; background: linear-gradient(180deg, transparent, rgba(3, 3, 4, 0.92) 140px, #030304); }
+.how .title { margin-bottom: 14px; }
+.how-steps { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; margin-top: 64px; }
+.how-n { display: block; font-family: var(--serif); font-weight: 300; font-size: 5rem; line-height: 0.9; margin-bottom: 18px; background: var(--flare); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.how-steps .h3 { margin-bottom: 8px; font-size: 1.2rem; }
+.how-steps p { color: var(--text-2); }
+
+.recent { margin-top: 96px; }
+.recent .h3 { margin-bottom: 18px; }
+.recent-list { display: flex; flex-wrap: wrap; gap: 12px; }
+.recent-list a { display: block; padding: 18px 22px; border-radius: 20px; text-decoration: none; max-width: 340px; transition: border-color 0.2s; }
+.recent-list a:hover { border-color: rgba(255, 196, 107, 0.45); }
+.recent-list strong { display: block; font-family: var(--mono); font-weight: 500; font-size: 0.92rem; color: var(--gold); margin-bottom: 4px; }
+.recent-list span { color: var(--text-2); font-size: 0.92rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+@media (max-width: 1000px) { .how-steps { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 760px) {
+  .bh { position: absolute; height: 58vh; }
+  .scrim { position: absolute; height: 58vh; background: linear-gradient(0deg, #030304 0%, rgba(3, 3, 4, 0.2) 45%, transparent 70%); }
+  .home-top { padding: 18px 20px; }
+  .home-links a:first-child { display: none; }
+  .hero { min-height: auto; padding: 46vh 20px 48px; align-items: flex-start; }
+  .ask { flex-wrap: wrap; border-radius: 26px; padding: 8px 8px 8px 18px; }
+  .ask .btn { width: 100%; }
+  .pref { grid-template-columns: 1fr; gap: 8px; }
+  .journey { padding: 26px 22px; }
+  .how { padding: 72px 20px 64px; }
+  .how-steps { grid-template-columns: 1fr; gap: 32px; margin-top: 40px; }
+}

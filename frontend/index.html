@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenCipher — every codebase has a way in</title>
+  <meta name="description" content="Paste a GitHub project. OpenCipher explains it in plain English and walks you to your first contribution.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body class="home">
+  <canvas id="bh" class="bh" aria-hidden="true"></canvas>
+  <div class="scrim" aria-hidden="true"></div>
+
+  <header class="home-top">
+    <a class="wordmark" href="index.html"><span class="wordmark-dot" aria-hidden="true"></span>OpenCipher</a>
+    <nav class="home-links">
+      <a href="#how">How it works</a>
+      <a href="dashboard.html?id=sample">See an example</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-text" id="hero-text">
+        <p class="kicker">For anyone making their first open-source contribution</p>
+        <h1 class="display">Every codebase<br>has a <em class="glow">way in.</em></h1>
+        <p class="lead">Paste a GitHub project. OpenCipher explains it in plain English, shows you the one file to read first, and walks you to your first contribution.</p>
+
+        <form class="ask glass" id="ask" novalidate>
+          <label class="sr-only" for="repo">GitHub project</label>
+          <span class="ask-prefix" aria-hidden="true">github.com/</span>
+          <input id="repo" type="text" placeholder="owner/project" autocomplete="off" spellcheck="false" aria-describedby="err">
+          <button class="btn" id="go" type="submit">Show me the way in</button>
+        </form>
+        <p class="err" id="err" role="alert"></p>
+
+        <div class="prefs">
+          <div class="pref">
+            <span class="pref-label" id="lvl-label">I am</span>
+            <div class="chips" role="radiogroup" aria-labelledby="lvl-label" id="levels">
+              <button type="button" class="chip" role="radio" data-level="beginner">New to coding</button>
+              <button type="button" class="chip" role="radio" data-level="intermediate">Able to code</button>
+              <button type="button" class="chip" role="radio" data-level="advanced">Experienced</button>
+            </div>
+          </div>
+          <div class="pref">
+            <span class="pref-label">I know</span>
+            <div class="chips" id="skills"></div>
+          </div>
+        </div>
+
+        <p class="try">Not sure what to try? <button type="button" data-repo="pallets/flask">pallets/flask</button> or <button type="button" data-repo="psf/requests">psf/requests</button></p>
+        <p class="status" id="status"><span class="dot"></span><span>Checking the AI model…</span></p>
+      </div>
+
+      <!-- shown while a project is being read -->
+      <div class="journey glass" id="journey" hidden aria-live="polite">
+        <p class="journey-repo" id="j-repo"></p>
+        <h2 class="journey-now" id="j-now">Reading the project…</h2>
+        <div class="journey-bar"><span id="j-bar"></span></div>
+        <ol class="journey-list" id="j-list"></ol>
+        <p class="journey-time" id="j-time"></p>
+        <div class="journey-actions" id="j-actions"></div>
+      </div>
+    </section>
+
+    <section class="how" id="how">
+      <h2 class="title">Four steps, in plain English</h2>
+      <p class="lead">No jargon walls, and it feels like a game. Every step earns XP, and you rise from Stardust to Black Hole.</p>
+      <ol class="how-steps">
+        <li><span class="how-n">1</span><h3 class="h3">What it is</h3><p>What the project does, who it's for, and the one file to read first. Ask it anything.</p></li>
+        <li><span class="how-n">2</span><h3 class="h3">Set it up</h3><p>What to install and the exact commands to copy, in order, to run it on your computer.</p></li>
+        <li><span class="how-n">3</span><h3 class="h3">Pick a task</h3><p>Real open issues matched to what you know, plus a checklist all the way to your pull request.</p></li>
+        <li><span class="how-n">4</span><h3 class="h3">Play &amp; earn</h3><p>Mini-games made from the project: a code quiz, Star Match, Jargon Rush and Command Builder. Earn XP, climb ranks, collect badges.</p></li>
+      </ol>
+
+      <div class="recent" id="recent" hidden>
+        <h3 class="h3">Continue where you left off</h3>
+        <div class="recent-list" id="recent-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">Made by Team OpenCipher for OpenForge 2026. Guides are written by <a href="https://huggingface.co/Qwen/Qwen3-8B" target="_blank" rel="noopener">Qwen3-8B</a>, an open-weight AI model.</footer>
+
+  <script src="js/common.js"></script>
+  <script src="js/space.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

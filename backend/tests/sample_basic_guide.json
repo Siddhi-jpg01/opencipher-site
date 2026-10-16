@@ -1,0 +1,405 @@
+{
+ "summary": {
+  "one_liner": "The Python micro framework for building web applications.",
+  "plain_explanation": [
+   "Flask is a lightweight WSGI web application framework. It is designed to make getting started quick and easy, with the ability to scale up to complex applications. It began as a simple wrapper around Werkzeug and Jinja, and has become one of the most popular Python web application frameworks.",
+   "Flask offers suggestions, but doesn't enforce any dependencies or project layout. It is up to the developer to choose the tools and libraries they want to use. There are many extensions provided by the community that make adding new functionality easy.",
+   "The Pallets organization develops and supports Flask and the libraries it uses. In order to grow the community of contributors and users, and allow the maintainers to devote more time to the projects, please donate today."
+  ],
+  "who_its_for": "Developers who want to use or improve flask.",
+  "tech_stack": [
+   "Python",
+   "Flask",
+   "pytest",
+   "Click"
+  ]
+ },
+ "prerequisites": [
+  {
+   "name": "Git",
+   "why": "To copy the project to your computer and send your changes back.",
+   "link": "https://git-scm.com/downloads"
+  },
+  {
+   "name": "Python >=3.9",
+   "why": "The project is written in Python.",
+   "link": "https://www.python.org/downloads/"
+  },
+  {
+   "name": "A code editor",
+   "why": "VS Code is free and works well for beginners.",
+   "link": "https://code.visualstudio.com/"
+  },
+  {
+   "name": "A GitHub account",
+   "why": "You need one to fork the repository and open a pull request.",
+   "link": "https://github.com/signup"
+  }
+ ],
+ "setup_steps": [
+  {
+   "title": "Fork and clone the repository",
+   "detail": "Click Fork on the GitHub page to make your own copy, then download it.",
+   "command": "git clone https://github.com/YOUR-USERNAME/flask.git\ncd flask"
+  },
+  {
+   "title": "Create a virtual environment",
+   "detail": "Keeps this project's packages separate from the rest of your computer.",
+   "command": "python -m venv .venv\n# Windows\n.venv\\Scripts\\activate\n# macOS / Linux\nsource .venv/bin/activate"
+  },
+  {
+   "title": "Install the dependencies",
+   "detail": "Installs the project and the packages it needs.",
+   "command": "pip install -e \".[dev]\""
+  },
+  {
+   "title": "Run the tests",
+   "detail": "Check everything passes before you change anything.",
+   "command": "pytest"
+  }
+ ],
+ "directories": [
+  {
+   "path": "src/flask/__init__.py",
+   "role": "Where the code starts. Read this first to see how the pieces connect.",
+   "importance": "core",
+   "start_here": true
+  },
+  {
+   "path": "src/",
+   "role": "The main source code.",
+   "importance": "core",
+   "start_here": false
+  },
+  {
+   "path": "CONTRIBUTING.md",
+   "role": "The rules for contributing. Read before your first pull request.",
+   "importance": "core",
+   "start_here": false
+  },
+  {
+   "path": "README.md",
+   "role": "Start here: what the project is and how to use it.",
+   "importance": "core",
+   "start_here": false
+  },
+  {
+   "path": "docs/",
+   "role": "Documentation. Great for a first contribution.",
+   "importance": "useful",
+   "start_here": false
+  },
+  {
+   "path": "examples/",
+   "role": "Small example programs that show how to use the project.",
+   "importance": "useful",
+   "start_here": false
+  },
+  {
+   "path": "tests/",
+   "role": "Automated tests. Add one when you fix a bug.",
+   "importance": "useful",
+   "start_here": false
+  },
+  {
+   "path": "pyproject.toml",
+   "role": "Python project settings and dependencies.",
+   "importance": "useful",
+   "start_here": false
+  },
+  {
+   "path": ".github/",
+   "role": "GitHub settings: CI workflows and issue templates.",
+   "importance": "skip",
+   "start_here": false
+  }
+ ],
+ "glossary": [
+  {
+   "term": "fork",
+   "meaning": "Your own copy of someone else's repository on GitHub."
+  },
+  {
+   "term": "clone",
+   "meaning": "Downloading a repository from GitHub to your computer."
+  },
+  {
+   "term": "branch",
+   "meaning": "A separate line of work, so your changes don't touch the main code until they're ready."
+  },
+  {
+   "term": "commit",
+   "meaning": "A saved snapshot of your changes, with a short message describing them."
+  },
+  {
+   "term": "pull request",
+   "meaning": "A request asking the maintainers to merge your changes into their project."
+  },
+  {
+   "term": "issue",
+   "meaning": "A task, bug report or idea tracked on GitHub."
+  },
+  {
+   "term": "dependency",
+   "meaning": "Another package this project needs in order to work."
+  },
+  {
+   "term": "CI",
+   "meaning": "Continuous integration: robots that run the tests automatically on every change."
+  },
+  {
+   "term": "maintainer",
+   "meaning": "A person who looks after the project and reviews contributions."
+  },
+  {
+   "term": "virtual environment",
+   "meaning": "A private folder of Python packages for one project."
+  },
+  {
+   "term": "pip",
+   "meaning": "Python's tool for installing packages."
+  }
+ ],
+ "issues": [
+  {
+   "number": 5612,
+   "title": "Docs: clarify app.run debug parameter in quickstart",
+   "url": "https://github.com/pallets/flask/issues/5612",
+   "labels": [
+    "docs",
+    "good first issue"
+   ],
+   "difficulty": "easy",
+   "skills": [
+    "docs",
+    "design"
+   ],
+   "explanation": "The quickstart says debug=True but doesn't explain the reloader.",
+   "related_files": [
+    "src/flask/app.py"
+   ],
+   "estimated_time": "1-2 hours"
+  },
+  {
+   "number": 5590,
+   "title": "Add type hints to helpers.get_flashed_messages",
+   "url": "https://github.com/pallets/flask/issues/5590",
+   "labels": [
+    "typing"
+   ],
+   "difficulty": "medium",
+   "skills": [
+    "python"
+   ],
+   "explanation": "get_flashed_messages in helpers.py is missing precise return types.",
+   "related_files": [
+    "src/flask/helpers.py"
+   ],
+   "estimated_time": "half a day"
+  },
+  {
+   "number": 5577,
+   "title": "CLI: --env-file error message is confusing",
+   "url": "https://github.com/pallets/flask/issues/5577",
+   "labels": [
+    "help wanted",
+    "cli"
+   ],
+   "difficulty": "medium",
+   "skills": [
+    "python"
+   ],
+   "explanation": "When the file is missing, cli.py raises a stack trace instead of a friendly message.",
+   "related_files": [
+    "src/flask/cli.py"
+   ],
+   "estimated_time": "half a day"
+  }
+ ],
+ "first_contribution": {
+  "issue_number": 5612,
+  "title": "Docs: clarify app.run debug parameter in quickstart",
+  "why": "It's the most beginner-friendly open issue: small in scope and clearly described."
+ },
+ "contributing_rules": [
+  "Use Black to format your code. This and other tools will run automatically if you install pre-commit.",
+  "Include tests if your patch adds or changes code. Make sure the test fails without your patch.",
+  "Update any relevant docs pages and docstrings. Docs pages and docstrings should be wrapped at 72 characters.",
+  "Add an entry in CHANGES.rst. Use the same style as other entries.",
+  "Create a branch to identify the issue you would like to work on."
+ ],
+ "quiz": [
+  {
+   "type": "mcq",
+   "question": "Which language is most of flask written in?",
+   "options": [
+    "Python",
+    "JavaScript",
+    "TypeScript",
+    "Go"
+   ],
+   "answer": 0,
+   "explanation": "GitHub reports Python as the main language.",
+   "id": "q1"
+  },
+  {
+   "type": "mcq",
+   "question": "Which file lists what the project needs installed?",
+   "options": [
+    "pyproject.toml",
+    "src/flask/__init__.py",
+    ".github/",
+    "LICENSE"
+   ],
+   "answer": 0,
+   "explanation": "pyproject.toml is the dependency file for this project.",
+   "id": "q2"
+  },
+  {
+   "type": "mcq",
+   "question": "Which file or folder should you read first?",
+   "options": [
+    "src/flask/__init__.py",
+    "src/",
+    "CONTRIBUTING.md",
+    "README.md"
+   ],
+   "answer": 0,
+   "explanation": "Where the code starts. Read this first to see how the pieces connect.",
+   "id": "q3"
+  },
+  {
+   "type": "truefalse",
+   "question": "You should make your changes directly on the main branch.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 1,
+   "explanation": "Always create a new branch for each change, so main stays clean.",
+   "id": "q4"
+  },
+  {
+   "type": "fill",
+   "question": "To get your own copy of the repository on GitHub, you ____ it.",
+   "options": [
+    "fork",
+    "merge",
+    "push",
+    "rebase"
+   ],
+   "answer": 0,
+   "explanation": "Forking creates your own copy on GitHub.",
+   "id": "q5"
+  },
+  {
+   "type": "fill",
+   "question": "To run the tests, type ____ in the terminal.",
+   "options": [
+    "pytest",
+    "npm test",
+    "cargo test",
+    "make check"
+   ],
+   "answer": 0,
+   "explanation": "This project runs its tests with pytest.",
+   "id": "q6"
+  }
+ ],
+ "puzzles": [
+  {
+   "id": "p-order",
+   "type": "order",
+   "title": "Put these steps for your first pull request in the right order.",
+   "language": "bash",
+   "lines": [
+    "git clone https://github.com/YOUR-USERNAME/flask.git",
+    "git checkout -b fix/my-first-change",
+    "pytest",
+    "git commit -am \"Describe your change\"",
+    "git push origin fix/my-first-change"
+   ],
+   "explanation": "Clone your fork, make a branch, check the tests, commit, then push and open the pull request."
+  }
+ ],
+ "id": "pallets-flask",
+ "generated_at": "2026-10-16T07:00:56.002824+00:00",
+ "model": null,
+ "ai": "none",
+ "ai_notes": [],
+ "level": "beginner",
+ "repo": {
+  "owner": "pallets",
+  "name": "flask",
+  "full_name": "pallets/flask",
+  "url": "https://github.com/pallets/flask",
+  "description": "The Python micro framework for building web applications.",
+  "stars": 69000,
+  "forks": 16300,
+  "open_issues": 9,
+  "language": "Python",
+  "license": "BSD-3-Clause",
+  "topics": [
+   "flask",
+   "python",
+   "wsgi"
+  ],
+  "updated_at": "2026-10-10T09:00:00Z",
+  "default_branch": "main",
+  "avatar": null,
+  "archived": false
+ },
+ "readiness": {
+  "score": 100,
+  "verdict": "Beginner friendly",
+  "checks": [
+   {
+    "name": "Clear README",
+    "pass": true,
+    "pts": 20,
+    "max": 20,
+    "detail": "1,866 characters"
+   },
+   {
+    "name": "CONTRIBUTING guide",
+    "pass": true,
+    "pts": 20,
+    "max": 20,
+    "detail": "CONTRIBUTING.md"
+   },
+   {
+    "name": "Beginner-labelled issues",
+    "pass": true,
+    "pts": 20,
+    "max": 20,
+    "detail": "2 open"
+   },
+   {
+    "name": "Dependency file",
+    "pass": true,
+    "pts": 15,
+    "max": 15,
+    "detail": "pyproject.toml"
+   },
+   {
+    "name": "Open-source licence",
+    "pass": true,
+    "pts": 10,
+    "max": 10,
+    "detail": "BSD-3-Clause"
+   },
+   {
+    "name": "Active in last 90 days",
+    "pass": true,
+    "pts": 15,
+    "max": 15,
+    "detail": "Last push 5 days ago"
+   }
+  ]
+ },
+ "where_to_start": {
+  "path": "src/flask/__init__.py",
+  "why": "Where the code starts. Read this first to see how the pieces connect."
+ },
+ "has_contributing": true
+}
